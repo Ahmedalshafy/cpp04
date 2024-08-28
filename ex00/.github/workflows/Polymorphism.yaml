@@ -1,0 +1,44 @@
+name: C++ CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up C++ environment
+      uses: actions/setup-cpp@v2
+      with:
+        compiler: c++
+
+    - name: Install dependencies
+      run: sudo apt-get install -y cmake
+
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: Run tests
+      run: |
+        cd build
+        # Assuming you have a test executable named "test"
+        make test
+
+    - name: Check for memory leaks with Valgrind
+      if: success()
+      run: |
+        cd build
+        make valgrind
