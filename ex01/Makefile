@@ -13,7 +13,7 @@ RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
 # Targets
-SRC := Animal.cpp Dog.cpp Cat.cpp main.cpp printColors.cpp WrongAnimal.cpp WrongCat.cpp
+SRC := Animal.cpp Dog.cpp Cat.cpp main.cpp printColors.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 INCLUDES := $(SRC:.cpp=.hpp)
 
 # Rules

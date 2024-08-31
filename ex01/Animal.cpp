@@ -6,10 +6,12 @@ Animal::Animal(){
 }
 
 Animal::Animal(const Animal &other){
+    std::cout << "Animal copy constructor called" << std::endl;
     *this = other;
 }
 
 Animal &Animal::operator=(const Animal &other){
+    std::cout << "Animal assigment operator called" << std::endl;
     this->type = other.type;
     return *this;
 }
