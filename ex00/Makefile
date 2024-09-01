@@ -30,7 +30,7 @@ clean:
 
 re: clean all
 
-valgrind:
+valgrind: re
 	@printf "$(CURSIVE)Running valgrind...$(RESET)\n"
 	valgrind --leak-check=full ./$(NAME)
 

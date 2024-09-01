@@ -13,14 +13,15 @@ RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
 # Targets
-SRC := Animal.cpp Dog.cpp Cat.cpp main.cpp printColors.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC := Animal.cpp Dog.cpp Cat.cpp printColors.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+MAIN := main.cpp
 INCLUDES := $(SRC:.cpp=.hpp)
 
 # Rules
 all: $(NAME)
 
-$(NAME): $(SRC)
-	@$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(SRC) $(INCLUDES)
+	@$(CXX) $(CXXFLAGS) $(MAIN) $(SRC) -o $(NAME)
 	@printf "$(GREEN)Compilation successful!$(RESET)\n"
 
 clean:
@@ -29,7 +30,7 @@ clean:
 
 re: clean all
 
-valgrind:
+valgrind: re
 	@printf "$(CURSIVE)Running valgrind...$(RESET)\n"
 	valgrind --leak-check=full ./$(NAME)
 
