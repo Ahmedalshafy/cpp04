@@ -2,7 +2,7 @@
 #include "printColors.hpp"
 
 Animal::Animal(){
-    std::cout << "Animal constructor called" << std::endl;
+    std::cout << "Animal default constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &other){
