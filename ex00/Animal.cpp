@@ -19,7 +19,7 @@ Animal::~Animal(){
 }
 
 void Animal::makeSound() const{
-    printWithStyle("Animal sound", GREEN, true, false, false);
+    printWithStyle("Animal has no sound", RED, true, false, false);
 }
 
 std::string Animal::getType() const{

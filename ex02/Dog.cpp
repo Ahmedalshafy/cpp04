@@ -11,8 +11,8 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog &other) : Animal(other)
 {
     printWithStyle("Dog copy constructor called", MAGENTA, true, true, false);
-    // if (this->brain)
-    //     delete this->brain;
+    if (this->brain)
+        delete this->brain;
     this->brain = new Brain(*other.brain);
     this->type = other.type;
     printWithStyle("Dog copy constructor called", MAGENTA, true, true, false);

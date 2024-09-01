@@ -26,5 +26,5 @@ Dog::~Dog()
 }
 
 void Dog::makeSound() const{
-    printWithStyle("Woof woof", RED, true, false, false);
+    printWithStyle("Woof woof", MAGENTA, true, false, false);
 }

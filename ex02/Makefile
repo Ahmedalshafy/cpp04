@@ -19,7 +19,7 @@ INCLUDES := $(SRC:.cpp=.hpp)
 # Rules
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) 
 	@$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
 	@printf "$(GREEN)Compilation successful!$(RESET)\n"
 

@@ -3,7 +3,7 @@
 
 Brain::Brain()
 {
-    printWithStyle("Brain constructor called", GREEN, true, true, false);
+    printWithStyle("Brain default constructor called", GREEN, true, true, false);
 }
 
 Brain::Brain(const Brain &other)
