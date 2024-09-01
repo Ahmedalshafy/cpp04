@@ -1,0 +1,8 @@
+#objects
+*.o
+*.ko
+*.obj
+*.elf
+
+#.identifiers
+*.Identifier
